@@ -1315,25 +1315,10 @@ public class NetworkControllerImpl extends BroadcastReceiver
         if (mWifiConnected) {
             if (mWifiSsid == null) {
                 wifiLabel = context.getString(R.string.status_bar_settings_signal_meter_wifi_nossid);
-                mWifiActivityIconId = 0; // no wifis, no bits
             } else {
                 wifiLabel = mWifiSsid;
                 if (DEBUG) {
                     wifiLabel += "xxxxXXXXxxxxXXXX";
-                }
-                switch (mWifiActivity) {
-                case WifiManager.DATA_ACTIVITY_IN:
-                    mWifiActivityIconId = R.drawable.stat_sys_wifi_in;
-                    break;
-                case WifiManager.DATA_ACTIVITY_OUT:
-                    mWifiActivityIconId = R.drawable.stat_sys_wifi_out;
-                    break;
-                case WifiManager.DATA_ACTIVITY_INOUT:
-                    mWifiActivityIconId = R.drawable.stat_sys_wifi_inout;
-                    break;
-                case WifiManager.DATA_ACTIVITY_NONE:
-                    mWifiActivityIconId = 0;
-                    break;
                 }
             }
 
