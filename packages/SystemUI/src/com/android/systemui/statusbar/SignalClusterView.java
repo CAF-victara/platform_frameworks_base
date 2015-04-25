@@ -381,13 +381,13 @@ public class SignalClusterView
             mAirplane.setVisibility(View.GONE);
         }
 
-        if (mWifiVisible && ((mIsAirplaneMode) || (mNoSimIconId != 0))) {
+        if (mWifiVisible && mIsAirplaneMode) {
             mWifiAirplaneSpacer.setVisibility(View.VISIBLE);
         } else {
             mWifiAirplaneSpacer.setVisibility(View.GONE);
         }
 
-        if (mRoaming && mMobileVisible && mWifiVisible) {
+        if ((mRoaming || mNoSimIconId != 0) && mMobileVisible && mWifiVisible) {
             mWifiSignalSpacer.setVisibility(View.VISIBLE);
         } else {
             mWifiSignalSpacer.setVisibility(View.GONE);
